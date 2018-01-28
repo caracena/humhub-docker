@@ -70,8 +70,8 @@ if [ ! -f "/var/www/localhost/htdocs/protected/config/.installed" ]; then
   if [ $? -eq 0 ]; then
     echo "installation active"
 	
-	if [ $SET_PJAX ]
-      sed -i -e "s/'enablePjax' => false/'enablePjax' => true/g" /var/www/localhost/htdocs/protected/config/common.php
+	if [ $SET_PJAX ]; then
+      	  sed -i -e "s/'enablePjax' => false/'enablePjax' => true/g" /var/www/localhost/htdocs/protected/config/common.php
 	fi
 	
 	touch /var/www/localhost/htdocs/protected/config/.installed
